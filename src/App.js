@@ -14,9 +14,10 @@ function App() {
      <ToastContainer/>
      <NavBar/>
      <Routes>
+     <Route exact path= "/" element={<Home/>}/>
       <Route exact path= "/cart" element={<Cart/>}/>
       <Route path= "/not-found" element={<NotFound/>}/>
-      <Route exact path= "/" element={<Home/>}/>
+      <Route to = "/not-found" />
      </Routes>
      </BrowserRouter> 
     </div>

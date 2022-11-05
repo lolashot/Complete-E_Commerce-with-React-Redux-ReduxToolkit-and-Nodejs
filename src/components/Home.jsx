@@ -1,9 +1,11 @@
-import { useGetAllProductsQuery } from "../features/productsApi";
-import {useDispatch} from "react-redux";
+import { useGetAllProductsQuery } from "../slices/productsApi";
+import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom"
-import { addToCart } from "../features/cartSlice";
+import { addToCart } from "../slices/cartSlice";
 
 const Home = () => {
+  const auth = useSelector((state) => state.auth);
+  console.log(auth)
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
   const navigate = useNavigate();
